@@ -1,0 +1,10 @@
+select {
+  width: 100%;
+  height: 10%;
+  border: black solid;
+  border-radius: var(--radius);
+  margin: 0.5vh 0;
+}
+select:hover {
+  cursor: pointer;
+}

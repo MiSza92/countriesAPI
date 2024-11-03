@@ -1,0 +1,117 @@
+.modalBG {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(233, 233, 233, 0.51);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(20px);
+  position: fixed; /* Geändert von absolute zu fixed */
+  top: 0;
+  left: 0;
+}
+
+.closeButton {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  cursor: pointer;
+  border-radius: var(--radius);
+  z-index: 10;
+}
+
+.modalBox {
+  position: relative;
+  background-color: rgb(245, 245, 245);
+  height: 75%;
+  width: 80%;
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  animation: yAchseUp 0.3s ease-out forwards;
+  backdrop-filter: blur(5px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.headerSection {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: center;
+
+  h3 {
+    color: rgba(27, 27, 27, 1);
+  }
+}
+
+.body {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.sideBox {
+  width: 20%;
+  height: 96%;
+  display: flex;
+  background: rgba(228, 228, 145, 0.83);
+  border-radius: var(--radius);
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  img {
+    object-fit: stretch;
+    width: 98%;
+    border: 1px grey solid;
+    border-radius: var(--radius);
+  }
+}
+.sideBox .textBox {
+  width: 85%;
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  tr {
+    border-bottom: 1px solid black;
+  }
+  td:nth-child(2) {
+    text-align: right;
+  }
+}
+.flagBox {
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.mapBox {
+  width: 57%;
+  height: 96%;
+}
+
+.leaflet-container {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  height: 100%;
+  zoom: 0;
+}
+
+@keyframes yAchseUp {
+  0% {
+    transform: scaleY(0.2);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+}

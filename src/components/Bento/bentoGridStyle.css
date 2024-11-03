@@ -1,0 +1,91 @@
+.bento-grid {
+  background-color: var(--bgColorDark);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px;
+  background-color: rgba(227, 207, 165, 255);
+  justify-content: center; /* Zentriert die Items im Container */
+}
+
+.bento-item {
+  flex: 1 1 150px; /* Flexbox-Eigenschaften für die Items */
+  max-width: 150px; /* Maximale Breite */
+  background-color: var(--color1Light);
+  border-radius: 10px;
+  padding: 0.3rem;
+  color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.image-container {
+  flex: 2 2 300px; /* Das Bild erhält mehr Platz */
+  max-width: 300px; /* Maximale Breite für das Bild */
+  padding: 0;
+  overflow: hidden;
+  align-content: center;
+  box-shadow:
+    rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Bild wird proportional beschnitten */
+}
+
+.info-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.info-card h2 {
+  font-size: 1rem;
+}
+
+.info-card p {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.country-card {
+  cursor: pointer;
+}
+.country-card:hover {
+  transform: translateY(-5px);
+}
+.country-card h2 {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.country-card p {
+  font-size: 0.8rem;
+  margin: 3px 0;
+}
+
+@media (max-width: 768px) {
+  .bento-grid {
+    grid-template-columns: 1fr; /* Eine Spalte für kleinere Bildschirme */
+    grid-template-areas:
+      "image-container"
+      "image-container"
+      "image-container"
+      "image-container"; /* Vollständige Breite auf kleineren Bildschirmen */
+  }
+
+  .image-container {
+    grid-column: auto;
+    grid-row: auto;
+    justify-self: center;
+    align-self: center;
+  }
+}
